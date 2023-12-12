@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
+  <title>FAQ</title>
+  <!-- External CSS stylesheets -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    .faq-questions {
+      margin-top: 1rem;
+      background: #fff;
+      padding: 10px;
+      line-height: 2.5rem;
+      border-radius: 2rem;
+      box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
+      transition: all 300ms ease;
+    }
+
+    .main-content {
+      min-height: 100vh;
+      margin-left: 100px;
+      transition: all 0.5s ease;
+      padding: 1rem;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">StudyFlow</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Category</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection'></i>
+            <span class="link_name">Tasks</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow'></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Tasks</a></li>
+          <li><a href="#">HTML & CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">PHP & MySQL</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book-alt'></i>
+            <span class="link_name">FlashCards</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow'></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">FlashCards</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Login Form</a></li>
+          <li><a href="#">Card Design</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="link_name">Multiple Choice</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Multiple Choice</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-line-chart'></i>
+          <span class="link_name">Chart</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Chart</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-plug'></i>
+            <span class="link_name">Plugins</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow'></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Plugins</a></li>
+          <li><a href="#">UI Face</a></li>
+          <li><a href="#">Pigments</a></li>
+          <li><a href="#">Box Icons</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-compass'></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Explore</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-history'></i>
+          <span class="link_name">Language</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><button class="link_name" href="#">Language</button></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cog'></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="profile-details">
+          <div class="profile-content">
+            <img src="image/profile.jpg" alt="profileImg">
+          </div>
+          <div class="name-job">
+            <div class="profile_name">John Mathew</div>
+            <div class="job">Student</div>
+          </div>
+          <i class='bx bx-log-out'></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu'></i>
+      <span class="text">Multiple Choice</span>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>FAQ</h1>
+    <!-- FAQ Questions -->
+    <div class="faq-questions">
+      <!-- Question 1 -->
+      <div class="question-1">
+        <h1>How do Marshalls view how many events a student has enrolled in?</h1>
+        <h4>Marshalls have to click on the students button and press the view buttons on each row to view how many
+          events and which events the selected student is enrolled in.</h4>
+      </div>
+      <!-- Question 2 -->
+      <div class="question-1">
+        <h1>How do Marshalls change and edit the heats and the students participating in each event?</h1>
+        <h4>Marshalls have to click on the Events button and remove the students from the heats.<br> To add, edit or
+          remove a student, press the buttons on the right to edit each heat, use the dropdown box to change events and
+          view the participants in each event</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript file for handling interactions -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>

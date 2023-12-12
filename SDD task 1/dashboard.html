@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">StudyFlow</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="dashboard.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="flashcards.html">
+            <i class='bx bx-collection'></i>
+            <span class="link_name">FlashCards</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Flashcards</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="closedpassage.html">
+            <i class='bx bx-book-alt'></i>
+            <span class="link_name">Closed Passage</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Closed Passage</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="questions.html">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="link_name">Multiple Choice</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Multiple Choice</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="instructions.html">
+          <i class='bx bx-compass'></i>
+          <span class="link_name">Instructions</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Instructions</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="settings.html">
+          <i class='bx bx-cog'></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="profile-details">
+          <div class="profile-content">
+            <img src="img/student-profile.jpg" alt="profileImg">
+          </div>
+          <div class="name-job">
+            <div class="profile_name">John Mathew</div>
+            <div class="job">Student</div>
+          </div>
+          <a href="login.html"><i class='bx bx-log-out'></i></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu'></i>
+      <span class="text">Dashboard</span>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <p>Explore your data at a glance with our interactive dashboard</p>
+
+    <!-- Statistics Section -->
+    <div class="statistics">
+      <!-- No. of Students -->
+      <div class="answered-questions">
+        <i class='bx bx-group'></i>
+        <div class="middle">
+          <div class="left">
+            <h3>No. of Questions Answered</h3>
+            <h1>21</h1>
+          </div>
+          <div class="progress">
+            <svg>
+              <circle cx='38' cy='48' r='36'></circle>
+            </svg>
+            <div class="number">
+              <p>81%</p>
+            </div>
+          </div>
+        </div>
+        <small class="text-muted">last 24 hours</small>
+      </div>
+
+      <div class="Task-completion">
+        <i class='bx bx-calendar-event' id="calender-icon"></i>
+        <div class="middle">
+          <div class="left">
+            <h3>No. of Tasks Completed</h3>
+            <h1>8</h1>
+          </div>
+          <div class="progress">
+            <svg>
+              <circle cx='38' cy='48' r='36'></circle>
+            </svg>
+            <div class="number">
+              <p>81%</p>
+            </div>
+          </div>
+        </div>
+        <small class="text-muted">last 24 hours</small>
+      </div>
+
+      <div class="average-score">
+        <i class='bx bx-user' id="marshall-icon"></i>
+        <div class="middle">
+          <div class="left">
+            <h3>Average Score</h3>
+            <h1>63%</h1>
+          </div>
+          <div class="progress">
+            <svg>
+              <circle cx='38' cy='48' r='36'></circle>
+            </svg>
+            <div class="number">
+              <p>63%</p>
+            </div>
+          </div>
+        </div>
+        <small class="text-muted">last 24 hours</small>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="task-list">
+        <h2>Recent Activity</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Task Name</th>
+              <th>Percentage Completed</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Multiple Choice</td>
+              <td>100%</td>
+              <td class="taskComplete-status">Completed</td>
+            </tr>
+            <tr>
+              <td>Closed Passage</td>
+              <td>90%</td>
+              <td class="taskIncomplete-status">Incompleted</td>
+            </tr>
+            <tr>
+              <td>Multiple Choice</td>
+              <td>100%</td>
+              <td class="taskComplete-status">Completed</td>
+            </tr>
+            <tr>
+              <td>Flashcards</td>
+              <td>90%</td>
+              <td class="taskIncomplete-status">Incompleted</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Recent Updates -->
+      <div class="recent-updates">
+        <h2>Recent messages</h2>
+        <div class="updates">
+          <div class="update">
+            <div class="profile-photo">
+              <img src="img/teacher1.png" class="profile-photo">
+            </div>
+            <div class="message">
+              <p><b>Teacher</b> has posted a new Task</p>
+              <small class="text-muted">10 Minutes Ago</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="img/teacher2.png" class="profile-photo">
+            </div>
+            <div class="message">
+              <p><b>Teacher</b> has posted a new Task</p>
+              <small class="text-muted">20 Minutes Ago</small>
+            </div>
+          </div>
+          <div class="update">
+            <div class="profile-photo">
+              <img src="img/teacher3.png" class="profile-photo">
+            </div>
+            <div class="message">
+              <p><b>Teacher</b> has posted a new Task</p>
+              <small class="text-muted">30 Minutes Ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script>
+      let arrow = document.querySelectorAll(".arrow");
+      for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e) => {
+          let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+          arrowParent.classList.toggle("showMenu");
+        });
+      }
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".bx-menu");
+      console.log(sidebarBtn);
+      sidebarBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+    </script>
+</body>
+
+
+
+
+
+
+</html>

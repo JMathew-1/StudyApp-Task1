@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
+  <title>FAQ</title>
+  <!-- External CSS stylesheets -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .faq-questions {
+      margin-top: 1rem;
+      background: #fff;
+      padding: 10px;
+      line-height: 2.5rem;
+      border-radius: 2rem;
+      box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
+      transition: all 300ms ease;
+    }
+
+    .faq-questions:hover {
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- Sidebar -->
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">StudyFlow</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="dashboard.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="flashcards.html">
+            <i class='bx bx-collection'></i>
+            <span class="link_name">FlashCards</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Flashcards</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="closedpassage.html">
+            <i class='bx bx-book-alt'></i>
+            <span class="link_name">Closed Passage</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Closed Passage</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="questions.html">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="link_name">Multiple Choice</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Multiple Choice</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="instructions.html">
+          <i class='bx bx-compass'></i>
+          <span class="link_name">Instructions</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Instructions</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="settings.html">
+          <i class='bx bx-cog'></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="profile-details">
+          <div class="profile-content">
+            <img src="img/student-profile.jpg" alt="profileImg">
+          </div>
+          <div class="name-job">
+            <div class="profile_name">John Mathew</div>
+            <div class="job">Student</div>
+          </div>
+          <a href="login.html"><i class='bx bx-log-out'></i></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu'></i>
+      <span class="text">Dashboard</span>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Instructions</h1>
+    <!-- Instructions Questions -->
+    <div class="faq-questions">
+      <div class="question-1">
+        <h1>How to use the app!</h1>
+        <h4>Students are first required to login with their username and password. They will then be rediected to the
+          dashboard where they can view basic information such as the number of tasks they have completed and their
+          average scores. They can then complete different activities such as multiple choice, closed passage and
+          flashcards. Students can also go to the settings page to change their language settings and also view account
+          information.</h4>
+      </div>
+      <!-- Question 2 -->
+      <div class="question-1" style="margin-top: 30px;">
+        <h1>How do students change langauge settings?</h1>
+        <h4>Students who are not comfortable with English and require the text in the study app to be displayed in
+          another language, can go to the settings page and change their language choice. </h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript file for handling interactions -->
+
+
+  <script>
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e) => {
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+      });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("close");
+    });
+  </script>
+</body>
+
+</html>

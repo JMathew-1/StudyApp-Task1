@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcard App</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+
+  <!-- Sidebar -->
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">StudyFlow</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="dashboard.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="flashcards.html">
+            <i class='bx bx-collection'></i>
+            <span class="link_name">FlashCards</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Flashcards</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="closedpassage.html">
+            <i class='bx bx-book-alt'></i>
+            <span class="link_name">Closed Passage</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Closed Passage</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="questions.html">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="link_name">Multiple Choice</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Multiple Choice</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="instructions.html">
+          <i class='bx bx-compass'></i>
+          <span class="link_name">Instructions</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Instructions</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="settings.html">
+          <i class='bx bx-cog'></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="profile-details">
+          <div class="profile-content">
+            <img src="img/student-profile.jpg" alt="profileImg">
+          </div>
+          <div class="name-job">
+            <div class="profile_name">John Mathew</div>
+            <div class="job">Student</div>
+          </div>
+          <a href="login.html"><i class='bx bx-log-out'></i></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu'></i>
+      <span class="text">Flashcards</span>
+    </div>
+  </section>
+
+
+
+
+  <div class="container">
+    <div class="add-flashcard-con">
+      <button id="add-flashcard">Add Flashcard</button>
+    </div>
+    <!-- Display Card of Question And Answers Here -->
+    <div id="card-con">
+      <div class="card-list-container">
+        <!-- Pre-made flashcard 1 -->
+        <div class="card">
+          <p class="question-div">What does HTML stand for?</p>
+          <p class="answer-div">Hypertext Markup Language.</p>
+          <div class="buttons-con">
+            <button class="edit" disabled><i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="delete" disabled><i class="fa-solid fa-trash-can"></i></button>
+          </div>
+        </div>
+
+        <!-- Pre-made flashcard 2 -->
+        <div class="card">
+          <p class="question-div">What does CSS stand for?</p>
+          <p class="answer-div">Cascading Style Sheets</p>
+          <div class="buttons-con">
+            <button class="edit" disabled><i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="delete" disabled><i class="fa-solid fa-trash-can"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Input form for users to fill question and answer -->
+  <div class="question-container hide" id="add-question-card">
+    <h2>Add Flashcard</h2>
+    <div class="wrapper">
+      <!-- Error message -->
+      <div class="error-con">
+        <span class="hide" id="error">Input fields cannot be empty!</span>
+      </div>
+      <!-- Close Button -->
+      <i class="fa-solid fa-xmark" id="close-btn"></i>
+    </div>
+    <label for="question">Question:</label>
+    <textarea class="input" id="question" placeholder="Type the question here..." rows="2"></textarea>
+    <label for="answer">Answer:</label>
+    <textarea class="input" id="answer" rows="4" placeholder="Type the answer here..."></textarea>
+    <button id="save-btn">Save</button>
+  </div>
+  <!-- Script -->
+  <script>
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e) => {
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+      });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("close");
+    });
+
+
+
+
+
+    const container = document.querySelector(".container");
+    const addQuestionCard = document.getElementById("add-question-card");
+    const cardButton = document.getElementById("save-btn");
+    const question = document.getElementById("question");
+    const answer = document.getElementById("answer");
+    const errorMessage = document.getElementById("error");
+    const addQuestion = document.getElementById("add-flashcard");
+    const closeBtn = document.getElementById("close-btn");
+    let editBool = false;
+    //Add question when user clicks 'Add Flashcard' button
+    addQuestion.addEventListener("click", () => {
+      container.classList.add("hide");
+      question.value = "";
+      answer.value = "";
+      addQuestionCard.classList.remove("hide");
+    });
+    //Hide Create flashcard Card
+    closeBtn.addEventListener(
+      "click",
+      (hideQuestion = () => {
+        container.classList.remove("hide");
+        addQuestionCard.classList.add("hide");
+        if (editBool) {
+          editBool = false;
+          submitQuestion();
+        }
+      })
+    );
+    //Submit Question
+    cardButton.addEventListener(
+      "click",
+      (submitQuestion = () => {
+        editBool = false;
+        tempQuestion = question.value.trim();
+        tempAnswer = answer.value.trim();
+        if (!tempQuestion || !tempAnswer) {
+          errorMessage.classList.remove("hide");
+        } else {
+          container.classList.remove("hide");
+          errorMessage.classList.add("hide");
+          viewlist();
+          question.value = "";
+          answer.value = "";
+        }
+      })
+    );
+    //Card Generate
+    function viewlist() {
+      var listCard = document.getElementsByClassName("card-list-container");
+      var div = document.createElement("div");
+      div.classList.add("card");
+      //Question
+      div.innerHTML += `
+  <p class="question-div">${question.value}</p>`;
+      //Answer
+      var displayAnswer = document.createElement("p");
+      displayAnswer.classList.add("answer-div", "hide");
+      displayAnswer.innerText = answer.value;
+      //Link to show/hide answer
+      var link = document.createElement("a");
+      link.setAttribute("href", "#");
+      link.setAttribute("class", "show-hide-btn");
+      link.innerHTML = "Show/Hide";
+      link.addEventListener("click", () => {
+        displayAnswer.classList.toggle("hide");
+      });
+      div.appendChild(link);
+      div.appendChild(displayAnswer);
+      //Edit button
+      let buttonsCon = document.createElement("div");
+      buttonsCon.classList.add("buttons-con");
+      var editButton = document.createElement("button");
+      editButton.setAttribute("class", "edit");
+      editButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`;
+      editButton.addEventListener("click", () => {
+        editBool = true;
+        modifyElement(editButton, true);
+        addQuestionCard.classList.remove("hide");
+      });
+      buttonsCon.appendChild(editButton);
+      disableButtons(false);
+      //Delete Button
+      var deleteButton = document.createElement("button");
+      deleteButton.setAttribute("class", "delete");
+      deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+      deleteButton.addEventListener("click", () => {
+        modifyElement(deleteButton);
+      });
+      buttonsCon.appendChild(deleteButton);
+      div.appendChild(buttonsCon);
+      listCard[0].appendChild(div);
+      hideQuestion();
+    }
+    //Modify Elements
+    const modifyElement = (element, edit = false) => {
+      let parentDiv = element.parentElement.parentElement;
+      let parentQuestion = parentDiv.querySelector(".question-div").innerText;
+      if (edit) {
+        let parentAns = parentDiv.querySelector(".answer-div").innerText;
+        answer.value = parentAns;
+        question.value = parentQuestion;
+        disableButtons(true);
+      }
+      parentDiv.remove();
+    };
+    //Disable edit and delete buttons
+    const disableButtons = (value) => {
+      let editButtons = document.getElementsByClassName("edit");
+      Array.from(editButtons).forEach((element) => {
+        element.disabled = value;
+      });
+    };
+  </script>
+</body>
+
+</html>

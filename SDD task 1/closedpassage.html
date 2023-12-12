@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Fill in the Blank Game</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+
+  <!-- Sidebar -->
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">StudyFlow</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="dashboard.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="flashcards.html">
+            <i class='bx bx-collection'></i>
+            <span class="link_name">FlashCards</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Flashcards</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="closedpassage.html">
+            <i class='bx bx-book-alt'></i>
+            <span class="link_name">Closed Passage</span>
+          </a>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Closed Passage</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="questions.html">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="link_name">Multiple Choice</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Multiple Choice</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="instructions.html">
+          <i class='bx bx-compass'></i>
+          <span class="link_name">Instructions</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Instructions</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="settings.html">
+          <i class='bx bx-cog'></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="profile-details">
+          <div class="profile-content">
+            <img src="img/student-profile.jpg" alt="profileImg">
+          </div>
+          <div class="name-job">
+            <div class="profile_name">John Mathew</div>
+            <div class="job">Student</div>
+          </div>
+          <a href="login.html"><i class='bx bx-log-out'></i></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu'></i>
+      <span class="text">Closed Passage</span>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <div class="Closedpassage-container">
+    <div id="question-container">
+      <h1>Fill in the Blank Game</h1>
+      <p id="question-text">
+        Which pseudocode keyword is associated with multiway selection? <input type="text" class="user-answer"
+          placeholder="Type your answer" data-correct="CASEWHERE">.
+        Name a Software Development Approach listed in the word-bank <input type="text" class="user-answer"
+          placeholder="Type your answer" data-correct="Agile Approach">
+        HTML stands for <input type="text" class="user-answer" placeholder="Type your answer"
+          data-correct="Hypertext Markup Language">
+        During which stage of the software development cycle should the boundaries of the
+        software first be considered? <input type="text" class="user-answer" placeholder="Type your answer"
+          data-correct="Defining and understanding">
+      </p>
+      <button onclick="checkAnswers()">Submit</button>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <!-- Word Bank Container -->
+  <div id="word-bank">
+    <p>Word Bank:</p>
+    <ul>
+      <li>CASEWHERE</li>
+      <li>Agile Approach</li>
+      <li>Hypertext Markup Language</li>
+      <li>Defining and understanding</li>
+      <!-- Add more words as needed -->
+    </ul>
+  </div>
+
+
+  <script>
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e) => {
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+      });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("close");
+    });
+
+    function checkAnswers() {
+      var userAnswers = document.getElementsByClassName("user-answer");
+      var resultContainer = document.getElementById("result");
+
+      var correctCount = 0;
+
+      for (var i = 0; i < userAnswers.length; i++) {
+        var userAnswer = userAnswers[i].value.trim();
+        var correctAnswer = userAnswers[i].getAttribute("data-correct");
+
+        if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+          userAnswers[i].classList.add("correct");
+          correctCount++;
+        } else {
+          userAnswers[i].classList.add("incorrect");
+        }
+      }
+
+      resultContainer.textContent = "You got " + correctCount + " out of " + userAnswers.length + " correct!";
+    }
+
+  </script>
+</body>
+
+</html>
